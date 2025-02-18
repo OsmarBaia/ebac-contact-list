@@ -5,13 +5,14 @@ const Card = styled.div/*css*/`
 
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
   gap: 1rem 1rem;
   grid-auto-flow: row;
   grid-template-areas:
     "image name name"
     "image telefone email"
-    "image telefone email";
+    "image telefone email"
+    "image button button";
 
   padding: 1rem;
   border: 1px solid #e9e9e9;
@@ -43,6 +44,51 @@ const Card__Email = styled.p/*css*/`
   grid-area: email;
 `;
 
+const Card__Buttons = styled.div/*css*/`
+  grid-area: button;
+
+  display: flex;    
+  alint-items: center;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 1rem;
+
+  button {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    border: 1px solid #e9e9e9;
+
+    box-shadow: 0 1px 1px 0 #000;
+
+    &.deletar {
+      background-color: #ed4c31;
+    }
+
+    &.editar {
+      background-color: #50d47d;
+    }
+
+    &:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+      box-shadow: 0 2px 2px 0 #000;
+    }
+
+    &:active {
+        transform: translateY(2px);
+        color: #000;
+
+        box-shadow: 0 0px 0px 0 #000;
+        i{
+            color: #000;
+        }
+    }
+  }
+`;
 
 
-export { Card, Card__Name, Card__Image, Card__Telefone, Card__Email };
+
+export { Card, Card__Name, Card__Image, Card__Telefone, Card__Email, Card__Buttons };
