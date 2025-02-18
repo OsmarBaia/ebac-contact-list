@@ -42,14 +42,19 @@ const Label = styled.label/*css*/`
     align-self: flex-start;
 `;
 
-const Input = styled.input/*css*/`
+const Input = styled.input<{ error?: boolean }>/*css*/`
     width: 100%;
     min-width: 150px;
     height: 2rem;
-    border: 1px solid #e9e9e9;
+    border: 1px solid ${(props) => (props.error ? "red" : "#e9e9e9")};
     border-radius: 1rem;
     background-color: #f5f5f5;
     padding-left: 1rem;
+
+    &:focus {
+        outline: none;
+        border-color: ${(props) => (props.error ? "red" : "#50d47d")};
+    }
 `;
 
 const Button = styled.button/*css*/`
@@ -76,7 +81,6 @@ const Button = styled.button/*css*/`
 
     &.fechar {
         background-color: #ed4c31;
-
     }
 
     &.salvar {
@@ -84,5 +88,12 @@ const Button = styled.button/*css*/`
     }
 `;
 
+const ErrorMessage = styled.p/*css*/`
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    margin-left: 1rem;
+    align-self: flex-start;
+`;
 
-export { Container, Form , Label, Input, Button };
+export { Container, Form, Label, Input, Button, ErrorMessage };
