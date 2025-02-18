@@ -1,13 +1,13 @@
-import EstiloGlobal from "./styles/index.ts";
-import Navbar from "./containers/navbar.tsx";
-import ContactList from "./containers/contact-list.tsx";
+import EstiloGlobal from "./App.ts";
+import SearchBar from "./containers/Header/searchbar.tsx";
+import ContactList from "./containers/Main/contact-list.tsx";
 
 function App() {
   return (
     <>
       <EstiloGlobal />
-      <Navbar/>
-      <ContactList />
+      <SearchBar/>
+      <ContactList/>
     </>
   )
 }

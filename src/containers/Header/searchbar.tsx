@@ -1,13 +1,13 @@
-import { Header, Form, Label, Input, Button } from "../styles/navbar.ts";
+import { Header, Form, Label, Input, Button } from "./searchbar.ts";
 
-const Navbar = () => {
+const SearchBar = () => {
     return <Header>
             <Form action="">
                 <Label htmlFor="busca"></Label>
                 <Input type="text" name="busca" id="busca" placeholder="Nome do Contato"/>
-                <Button type="submit"><i className="bi bi-search"></i></Button>
+                <Button type="button" role="search"><i className="bi bi-search"></i></Button>
             </Form>
         </Header>
 }
 
-export default Navbar
+export default SearchBar
